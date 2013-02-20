@@ -5,6 +5,7 @@ Vagrant::Config.run do |config|
   config.vm.host_name = "simple"
   config.vm.network :hostonly, "192.168.50.4"
 
+  config.vm.forward_port 80, 4567
   config.vm.share_folder "www", "/var/www/", "."
 
   config.vm.provision :puppet do |puppet|
